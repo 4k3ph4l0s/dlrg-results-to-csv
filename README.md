@@ -1,8 +1,8 @@
 ## What it does.
 
-This tool extracts information from an image of tabular competition results and dumps it into a CSV file.
+This tool extracts information from an image of tabular ([JAuswertung](https://github.com/dennisfabri/JAuswertung)) competition results and dumps it into a CSV file.
 
-The accuracy depends on the quality of the image. If the images stem from text-based PDFs or similar, it is highly accurate. If the images stem from image-based PDFs of bad quality, scans, photos etc., it is less accurate. In my experience, this manifests mostly in missing information, and not so much in incorrect information.
+The accuracy depends on the quality of the image. If the images stem from text-based PDFs or similar, it is highly accurate. If the images stem from image-based PDFs of bad quality, scans, photos etc., it is less accurate.
 
 ## How it works.
 
