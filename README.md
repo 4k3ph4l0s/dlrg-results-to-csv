@@ -18,6 +18,17 @@ There are optional arguments
 
 The OCR is done by Tesseract. Information is parsed from hOCR into a table by some heuristics and pattern matching.
 
+## Examples
+
+Input:
+![](examples/1input.png)
+Output:
+![](examples/1output.png)
+Input:
+![](examples/2input.png)
+Output:
+![](examples/2output.png)
+
 ## Known issues.
 
 Unicode characters in the competitors names are not yet supported. Neither are multiple given names or surnames.
