@@ -1,11 +1,19 @@
 import argparse
 import csv
+import cv2
+import os
 from OcrTool import OcrTool
 from HocrParser import HocrParser
 from Tabulator import Tabulator
 
 
 def main(image_path, tesseract_executable_path, output_csv_path):
+    # Scale image (3000px width seems to give sufficient OCR accuracy)
+    image = cv2.imread(image_path)
+    scale_factor = 3000 / image.shape[1]
+    image = cv2.resize(image, (0, 0), fx=scale_factor, fy=scale_factor)
+    cv2.imwrite("scaled_image.jpg", image)
+    image_path = "scaled_image.jpg"
     # Perform OCR
     hocr = OcrTool(tesseract_executable_path).get_hocr(image_path)
     # Parse hOCR into a more useful structure
@@ -18,6 +26,8 @@ def main(image_path, tesseract_executable_path, output_csv_path):
     with open(output_csv_path, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerows(table)
+    # Delete the scaled image
+    os.remove(image_path)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
