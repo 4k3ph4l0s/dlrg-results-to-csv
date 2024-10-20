@@ -2,7 +2,7 @@
 
 This tool extracts information from an image of tabular ([JAuswertung](https://github.com/dennisfabri/JAuswertung)) competition results and dumps it into a CSV file.
 
-The accuracy depends on the quality of the image. If the images stem from text-based PDFs or similar, it is highly accurate. If the images stem from image-based PDFs of bad quality, scans, photos etc., it is less accurate.
+The accuracy depends on the quality of the image. If the images stem from text-based PDFs or similar, it is highly accurate. If the images stem from image-based PDFs of bad quality, scans, photos of printouts etc., the output should be thoroughly checked.
 
 ## How it works.
 
@@ -20,14 +20,18 @@ The OCR is done by Tesseract. Information is parsed from hOCR into a table by so
 
 ## Examples
 
-Input:
+Input (screenshot of text-based PDF, "Mehrkampfwertung"):
 ![](examples/1input.png)
 Output:
 ![](examples/1output.png)
-Input:
+Input (screenshot of text-based PDF, "Einzelstreckenwertung"):
 ![](examples/2input.png)
 Output:
 ![](examples/2output.png)
+Input (photo of printout, "Mehrkampfwertung"):
+![](examples/3input.jpg)
+Output:
+![](examples/3output.png)
 
 ## Known issues.
 
